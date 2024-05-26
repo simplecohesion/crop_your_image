@@ -10,6 +10,7 @@ import 'package:crop_your_image/src/widget/rect_crop_area_clipper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:image/image.dart' as image;
 
 typedef ViewportBasedRect = Rect;
 typedef ImageBasedRect = Rect;
@@ -288,7 +289,7 @@ class _CropEditorState extends State<_CropEditor> {
       ? const VerticalCalculator()
       : const HorizontalCalculator();
 
-  ImageFormat? _detectedFormat;
+  image.ImageFormat? _detectedFormat;
 
   @override
   void initState() {
@@ -747,7 +748,7 @@ class _CropEditorState extends State<_CropEditor> {
 /// calls [ImageParser.call] with given arguments
 ImageDetail _parseFunc(List<dynamic> args) {
   final parser = args[0] as ImageParser;
-  final format = args[1] as ImageFormat?;
+  final format = args[1] as image.ImageFormat?;
   return parser(args[2] as Uint8List, inputFormat: format);
 }
 

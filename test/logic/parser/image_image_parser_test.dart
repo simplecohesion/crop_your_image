@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:crop_your_image/src/logic/format_detector/format.dart';
 import 'package:crop_your_image/src/logic/parser/errors.dart';
 import 'package:crop_your_image/src/logic/parser/image_image_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:image/image.dart';
 
 void main() {
   final imageParser = imageImageParser;
@@ -50,7 +50,7 @@ void main() {
         expect(
           () => imageParser(
             testImage,
-            inputFormat: ImageFormat.jpeg,
+            inputFormat: ImageFormat.jpg,
           ),
           throwsA(const TypeMatcher<InvalidInputFormatError>()),
         );

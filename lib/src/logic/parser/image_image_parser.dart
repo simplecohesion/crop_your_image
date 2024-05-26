@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
-import 'package:crop_your_image/src/logic/format_detector/format.dart';
 import 'package:crop_your_image/src/logic/parser/errors.dart';
 import 'package:crop_your_image/src/logic/parser/image_detail.dart';
 import 'package:image/image.dart' as image;
+import 'package:image/image.dart';
 
 import 'image_parser.dart';
 
@@ -37,7 +37,7 @@ final ImageParser<image.Image> imageImageParser = (data, {inputFormat}) {
 image.Image? _decodeWith(Uint8List data, {ImageFormat? format}) {
   try {
     return switch (format) {
-      ImageFormat.jpeg => image.decodeJpg(data),
+      ImageFormat.jpg => image.decodeJpg(data),
       ImageFormat.png => image.decodePng(data),
       ImageFormat.bmp => image.decodeBmp(data),
       ImageFormat.ico => image.decodeIco(data),

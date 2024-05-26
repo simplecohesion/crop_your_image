@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:crop_your_image/src/logic/format_detector/format.dart';
 import 'package:crop_your_image/src/logic/shape.dart';
+import 'package:image/image.dart';
 
 /// Interface for cropping logic
 abstract class ImageCropper<T> {

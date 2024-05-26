@@ -7,7 +7,6 @@ import 'dart:ui';
 
 import 'package:crop_your_image/src/logic/cropper/errors.dart';
 import 'package:crop_your_image/src/logic/cropper/image_cropper.dart';
-import 'package:crop_your_image/src/logic/format_detector/format.dart';
 import 'package:crop_your_image/src/logic/shape.dart';
 
 import 'package:image/image.dart';
@@ -21,7 +20,7 @@ class ImageImageCropper extends ImageCropper<Image> {
     required Image original,
     required Offset topLeft,
     required Offset bottomRight,
-    ImageFormat outputFormat = ImageFormat.jpeg,
+    ImageFormat outputFormat = ImageFormat.jpg,
     ImageShape shape = ImageShape.rectangle,
   }) {
     if (topLeft.dx.isNegative ||

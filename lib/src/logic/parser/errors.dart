@@ -1,4 +1,4 @@
-import 'package:crop_your_image/src/logic/format_detector/format.dart';
+import 'package:image/image.dart';
 
 class InvalidInputFormatError extends Error {
   final ImageFormat? inputFormat;
